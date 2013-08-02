@@ -40,12 +40,20 @@ let Tlist_Show_One_File=1
 let Tlist_Exit_OnlyWindow=1
 
 " Key map
-" u
-" F
-nnoremap <silent> <F5> :NERDTree<CR>  
+" Presee F4 and you can open the NERDTree
+nnoremap <silent> <F4> :NERDTree<CR>  
+" Show function List with Tlist 
 nnoremap <F12> :TlistToggle<CR>
 
 "set autocomplet 
 autocmd BufNewFile,BufRead *.html.erb set filetype=html.eruby
 
 filetype plugin on
+
+
+map gn :bn<cr>
+map gp :bp<cr>
+map ff :CtrlP<cr>
+map gt :buffers<cr>
+
+let g:NERDTreeWinSize=12
