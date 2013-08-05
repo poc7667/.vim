@@ -8,6 +8,7 @@ set fileencoding=utf-8
 colorscheme elflord            
 set smartindent
 set tabstop=4
+set expandtab  
 set shiftwidth=4
 "try to set show ansi color
 if &term=="ansi" 
@@ -45,6 +46,14 @@ nnoremap <silent> <F4> :NERDTree<CR>
 " Show function List with Tlist 
 nnoremap <F12> :TlistToggle<CR>
 
+" Map ctrl+q to ctrlw+ctrlw
+"
+nnoremap <silent> <C-q>  :<C-w><C-w>
+
+"switch in splitted window
+map <c-d> <c-w>l
+map <c-a> <c-w>h
+
 "set autocomplet 
 autocmd BufNewFile,BufRead *.html.erb set filetype=html.eruby
 
@@ -55,5 +64,64 @@ map gn :bn<cr>
 map gp :bp<cr>
 map ff :CtrlP<cr>
 map gt :buffers<cr>
-
+"set NerdTreeSize
 let g:NERDTreeWinSize=12
+
+
+set nocompatible " explictly get out of vi-compatible mode
+
+set background=dark " we plan to use a dark background
+
+syntax on " syntax highlighting on
+
+set number " turn on line numbers
+
+set ruler "always show current position along the bottom
+
+set incsearch " do highlight as you type you search phrase
+
+set ignorecase " case insensitive by default
+
+set smartcase " if there are caps, go case-sensitive
+
+"python
+let Tlist_Auto_Highlight_Tag=1  
+let Tlist_Auto_Open=1  
+let Tlist_Auto_Update=1  
+let Tlist_Display_Tag_Scope=1  
+let Tlist_Exit_OnlyWindow=1  
+let Tlist_Enable_Dold_Column=1  
+let Tlist_File_Fold_Auto_Close=1  
+let Tlist_Show_One_File=1  
+let Tlist_Use_Right_Window=1  
+let Tlist_Use_SingleClick=1  
+
+
+"auto complete parathess
+inoremap {      {}<Left>
+inoremap {<CR>  {<CR>}<Esc>O
+inoremap {{     {
+inoremap {}     {}
+
+inoremap (      ()<Left>
+inoremap (<CR>  (<CR>)<Esc>O
+inoremap ((     (
+inoremap ()     ()
+
+"Python
+"
+"enable folding
+set foldmethod=indent
+set foldlevel=99
+
+
+"Rope vim
+
+let $PYTHONPATH .= ":~/install/ropehg/rope:~/install/ropehg/ropemode:~/install/ropehg/ropevim"
+source ~/install/ropehg/ropevim/ropevim.vim
+let g:pymode_rope_goto_def_newwin = "new"
+let ropevim_vim_completion=1
+"Use Ctrl + ] . to autocomple
+inoremap <C-]> <C-R>=RopeCodeAssistInsertMode()<CR>
+map <leader>j :RopeGotoDefinition<CR>
+map <leader>r :RopeRename<CR>
