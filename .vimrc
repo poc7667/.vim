@@ -10,6 +10,15 @@ set smartindent
 set tabstop=4
 set expandtab  
 set shiftwidth=4
+"make it autoreload
+set autoread 
+
+"auto move it last time the position you viewed
+"make vim save and load the folding of the document each time it loads"
+""also places the cursor in the last place that it was left."
+au BufWinLeave * mkview
+au BufWinEnter * silent loadview
+
 "try to set show ansi color
 if &term=="ansi" 
 set t_Co=0 
@@ -43,6 +52,7 @@ let Tlist_Exit_OnlyWindow=1
 " Key map
 " Presee F4 and you can open the NERDTree
 nnoremap <silent> <F4> :NERDTree<CR>  
+nnoremap <silent> <F3> :!/usr/bin/env python %<CR>
 " Show function List with Tlist 
 nnoremap <F12> :TlistToggle<CR>
 
@@ -53,6 +63,9 @@ nnoremap <silent> <C-q>  :<C-w><C-w>
 "switch in splitted window
 map <c-d> <c-w>l
 map <c-a> <c-w>h
+
+"set highlight
+set hlsearch
 
 "set autocomplet 
 autocmd BufNewFile,BufRead *.html.erb set filetype=html.eruby
@@ -97,17 +110,6 @@ let Tlist_Use_Right_Window=1
 let Tlist_Use_SingleClick=1  
 
 
-"auto complete parathess
-inoremap {      {}<Left>
-inoremap {<CR>  {<CR>}<Esc>O
-inoremap {{     {
-inoremap {}     {}
-
-inoremap (      ()<Left>
-inoremap (<CR>  (<CR>)<Esc>O
-inoremap ((     (
-inoremap ()     ()
-
 "Python
 "
 "enable folding
@@ -125,3 +127,6 @@ let ropevim_vim_completion=1
 inoremap <C-]> <C-R>=RopeCodeAssistInsertMode()<CR>
 map <leader>j :RopeGotoDefinition<CR>
 map <leader>r :RopeRename<CR>
+
+"auto ident with newline
+imap <C-Return> <CR><CR><C-o>k<Tab>
