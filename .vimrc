@@ -151,5 +151,6 @@ let g:ctrlp_follow_symlinks=1
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
+Bundle 'tpope/vim-surround'
 filetype plugin indent on
 
