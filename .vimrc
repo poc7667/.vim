@@ -58,7 +58,7 @@ nnoremap <F12> :TlistToggle<CR>
 
 " Map ctrl+q to ctrlw+ctrlw
 "
-nnoremap <silent> <C-q>  :<C-w><C-w>
+"nnoremap <silent> <C-q>  :<C-w><C-w>
 
 "switch in splitted window
 map <c-d> <c-w>l
@@ -130,3 +130,18 @@ map <leader>r :RopeRename<CR>
 
 "auto ident with newline
 imap <C-Return> <CR><CR><C-o>k<Tab>
+
+
+"auto import python template
+autocmd bufnewfile *.py 0r ~/py_lib/tmpl.py
+
+
+"add ctrlp.vim setting
+"
+let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$\|.rvm$'
+let g:ctrlp_working_path_mode=0
+let g:ctrlp_match_window_bottom=1
+let g:ctrlp_max_height=15
+let g:ctrlp_match_window_reversed=0
+let g:ctrlp_mruf_max=500
+let g:ctrlp_follow_symlinks=1
