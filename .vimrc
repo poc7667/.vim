@@ -68,8 +68,8 @@ map <c-a> <c-w>h
 set hlsearch
 
 "set autocomplet 
-autocmd BufNewFile,BufRead *.html.erb set filetype=html.eruby
-
+"autocmd BufNewFile,BufRead *.html.erb set filetype=html.eruby
+autocmd BufNewFile,BufRead *.html.erb set filetype=erb.html.eruby
 filetype plugin on
 
 
@@ -148,9 +148,15 @@ let g:ctrlp_follow_symlinks=1
 
 
 "Vundle 
-
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'tpope/vim-surround'
+Bundle 'ack.vim'
 filetype plugin indent on
 
+nmap <leader>a <Esc>:Ack ""
+
+
+"folding code
+nnoremap <space> za
+vnoremap <space> zf
