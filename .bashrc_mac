@@ -5,6 +5,8 @@
 PS1="[\W] $ "
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 
+
+
 # some more ls aliases
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
@@ -27,7 +29,9 @@ alias f='find ./ -iname '
 #we should use mvim to replace original vim
 alias vim='mvim -v '
 
-alias jp='cd ~/Dropbox/Python/'
+alias dpx='cd ~/Dropbox'
+#alias jp='cd ~/Dropbox/Python/'
+alias jp='cd /Users/hsu-wei-cheng/Dropbox/Python/URL_Command/sandbox'
 alias jr='cd ~/Dropbox/Ruby/'
 alias 777='sudo chmod -R 777 *'
 
@@ -45,3 +49,5 @@ export PATH="~/bin:/usr/local/bin:/usr/bin:HOME/.rvm/bin:$PATH"
 PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig
 export PKG_CONFIG_PATH
 
+#Python Path
+export PYTHONPATH="/Users/hsu-wei-cheng/common_lib/python::$PYTHONPATH"
