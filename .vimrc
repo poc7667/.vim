@@ -140,7 +140,7 @@ imap <C-Return> <CR><CR><C-o>k<Tab>
 
 
 "auto import python template
-autocmd bufnewfile *.py 0r ~/py_lib/tmpl.py
+autocmd bufnewfile *.py 0r ~/common_lib/python/tmpl.py
 
 
 "add ctrlp.vim setting
