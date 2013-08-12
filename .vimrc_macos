@@ -21,7 +21,7 @@ au BufWinEnter * silent loadview
 
 "try to set show ansi color
 if &term=="ansi" 
-set t_Co=0 
+    set t_Co=0 
 endif
 
 "set expandtab
@@ -29,20 +29,20 @@ endif
 filetype on
 
 if has("cscope")
-set csprg=/usr/bin/cscope
-set csto=0
-set cst
-set nocsverb
-" add any database in current directory
-if filereadable("cscope.out")
-cs add cscope.out
-" else add database pointed to by environment
-elseif $CSCOPE_DB != ""
-cs add $CSCOPE_DB
-endif
-set csverb
-set cscopetag
-set cscopequickfix=s-,g-,c-,d-,t-,e-,f-,i-
+    set csprg=/usr/bin/cscope
+    set csto=0
+    set cst
+    set nocsverb
+    " add any database in current directory
+    if filereadable("cscope.out")
+        cs add cscope.out
+        " else add database pointed to by environment
+    elseif $CSCOPE_DB != ""
+        cs add $CSCOPE_DB
+    endif
+    set csverb
+    set cscopetag
+    set cscopequickfix=s-,g-,c-,d-,t-,e-,f-,i-
 endif
 
 "let Tlist can close windows at one time
@@ -52,7 +52,7 @@ let Tlist_Exit_OnlyWindow=1
 " Key map
 " Presee F4 and you can open the NERDTree
 nnoremap <silent> <F4> :NERDTree<CR>  
-nnoremap <silent> <F3> :!/usr/bin/env python %<CR>
+"nnoremap <silent> <F3> :!/usr/bin/env python %<CR>
 " Show function List with Tlist 
 nnoremap <F12> :TlistToggle<CR>
 
@@ -97,34 +97,8 @@ set ignorecase " case insensitive by default
 
 set smartcase " if there are caps, go case-sensitive
 
-" adjust configuration for such hostile environment as Windows {{{
-if has("win32") || has("darwin")
-
-else
-
-
-"python
-let Tlist_Auto_Highlight_Tag=1  
-let Tlist_Auto_Open=1  
-let Tlist_Auto_Update=1  
-let Tlist_Display_Tag_Scope=1  
-let Tlist_Exit_OnlyWindow=1  
-let Tlist_Enable_Dold_Column=1  
-let Tlist_File_Fold_Auto_Close=1  
-let Tlist_Show_One_File=1  
-let Tlist_Use_Right_Window=1  
-let Tlist_Use_SingleClick=1  
-
-
-"Python
-"
-"enable folding
-set foldmethod=indent
-set foldlevel=99
-
 
 "Rope vim
-
 let $PYTHONPATH .= ":~/install/ropehg/rope:~/install/ropehg/ropemode:~/install/ropehg/ropevim"
 source ~/install/ropehg/ropevim/ropevim.vim
 let g:pymode_rope_goto_def_newwin = "new"
@@ -134,38 +108,7 @@ inoremap <C-]> <C-R>=RopeCodeAssistInsertMode()<CR>
 map <leader>j :RopeGotoDefinition<CR>
 map <leader>r :RopeRename<CR>
 
-"auto ident with newline
-imap <C-Return> <CR><CR><C-o>k<Tab>
-
-
-"auto import python template
-autocmd bufnewfile *.py 0r ~/py_lib/tmpl.py
-
-
-"add ctrlp.vim setting
-"
-let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$\|.rvm$'
-let g:ctrlp_working_path_mode=0
-let g:ctrlp_match_window_bottom=1
-let g:ctrlp_max_height=15
-let g:ctrlp_match_window_reversed=0
-let g:ctrlp_mruf_max=500
-let g:ctrlp_follow_symlinks=1
-
-
-"Vundle 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'tpope/vim-surround'
-Bundle 'ack.vim'
-filetype plugin indent on
-
-nmap <leader>a <Esc>:Ack ""
-
-
-"folding code
-nnoremap <space> za
-vnoremap <space> zf
-
-endif
-" }}}
+" Load the whole plugin
+ let g:pymode = 1
+" Load run code plugin
+ let g:pymode_run = 1
