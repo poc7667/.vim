@@ -1,3 +1,4 @@
+
 hi  Comment  ctermfg=6
 "auto exec ruby and coffee script with F5 , remeber to save file before launching
 autocmd FileType ruby nmap <F5> :!ruby %<cr>

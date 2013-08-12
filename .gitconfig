@@ -1,0 +1,13 @@
+[user]
+name = poc7667
+email = poc7667@gmail.com
+[alias]
+st = status
+ci = commit
+br = branch
+co = checkout
+di = diff
+lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+[color]
+ui = true
+
