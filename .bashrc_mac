@@ -9,7 +9,14 @@ export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 export LANG=zh_TW.UTF-8
 
 MACBOOK_AIR="Hsu-Wei-Chengteki-MacBook-Air.local"
+MAC_PRO="localhost"
 export WHO=`uname -a | awk '{print $2}'`
+
+if [ $WHO == $MACBOOK_AIR ];then
+    USER_HOME='/Users/hsu-wei-cheng'
+elif    [ $WHO == $MAC_PRO ];then
+    USER_HOME='/Users/poc'
+fi
 
 # some more ls aliases
 if [ -f ~/.bash_aliases ]; then
@@ -33,17 +40,18 @@ alias f='find ./ -iname '
 #we should use mvim to replace original vim
 alias vim='mvim -v '
 
-alias dpx='cd ~/Dropbox'
+alias dpx='cd $USER_HOME/Dropbox'
 #alias jp='cd ~/Dropbox/Python/'
-alias jp='cd /Users/hsu-wei-cheng/Dropbox/Python/URL_Command/sandbox'
-alias vvtk='cd /Users/hsu-wei-cheng/Dropbox/vivotek'
-alias jr='cd /Users/hsu-wei-cheng/Dropbox/Rails/sandbox/urlcmd'
+alias jp='cd $USER_HOME/Dropbox/Python/URL_Command/sandbox'
+alias vvtk='cd $USER_HOME/Dropbox/vivotek'
+alias jr='cd $USER_HOME/Dropbox/Rails/sandbox/urlcmd'
 alias 777='sudo chmod -R 777 *'
 
 #Rails
 alias dbmigrate='rake db:migrate'
 alias uproutes='rake routes'
 
+export PYTHONPATH="$USER_HOME/common_lib/python::$PYTHONPATH"
 
 rvm_project_rvmrc=1
 
@@ -52,13 +60,5 @@ rvm_project_rvmrc=1
 export PATH="~/bin:/usr/local/bin:/usr/bin:HOME/.rvm/bin:$PATH"
 PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig
 export PKG_CONFIG_PATH
-
-#Run the code in Macbook air
-if [ $WHO == $MACBOOK_AIR ];then
-
-    #Python Path
-    export PYTHONPATH="/Users/hsu-wei-cheng/common_lib/python::$PYTHONPATH"
-
-fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
