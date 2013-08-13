@@ -99,9 +99,7 @@ set ignorecase " case insensitive by default
 set smartcase " if there are caps, go case-sensitive
 
 " adjust configuration for such hostile environment as Windows {{{
-if has("win32") || has("darwin")
 
-else
 
 
 "python
@@ -145,7 +143,7 @@ autocmd bufnewfile *.py 0r ~/common_lib/python/tmpl.py
 
 "add ctrlp.vim setting
 "
-let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$\|.rvm$'
+let g:ctrlp_custom_ignore = 'tmp$\|\.git$\|\.hg$\|\.svn$\|.rvm$'
 let g:ctrlp_working_path_mode=0
 let g:ctrlp_match_window_bottom=1
 let g:ctrlp_max_height=15
@@ -159,6 +157,8 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'tpope/vim-surround'
 Bundle 'ack.vim'
+"Vim-scripts repo
+Bundle 'The-NERD-Commenter'
 filetype plugin indent on
 
 nmap <leader>a <Esc>:Ack ""
@@ -168,5 +168,3 @@ nmap <leader>a <Esc>:Ack ""
 nnoremap <space> za
 vnoremap <space> zf
 
-endif
-" }}}

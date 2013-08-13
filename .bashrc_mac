@@ -27,7 +27,7 @@ if [ "$PS1" ]; then
     complete -cf sudo
 fi
 alias ls='ls -GF'
-alias ll='ls -GFlt '
+alias ll='ls -aGFlt '
 alias f='find ./ -iname '
 
 #we should use mvim to replace original vim
@@ -37,7 +37,7 @@ alias dpx='cd ~/Dropbox'
 #alias jp='cd ~/Dropbox/Python/'
 alias jp='cd /Users/hsu-wei-cheng/Dropbox/Python/URL_Command/sandbox'
 alias vvtk='cd /Users/hsu-wei-cheng/Dropbox/vivotek'
-alias jr='cd ~/Dropbox/Rails'
+alias jr='cd /Users/hsu-wei-cheng/Dropbox/Rails/sandbox/urlcmd'
 alias 777='sudo chmod -R 777 *'
 
 #Rails
@@ -47,7 +47,6 @@ alias uproutes='rake routes'
 
 rvm_project_rvmrc=1
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 #brew will put bin link in /usr/local/bin 
 export PATH="~/bin:/usr/local/bin:/usr/bin:HOME/.rvm/bin:$PATH"
@@ -62,3 +61,4 @@ if [ $WHO == $MACBOOK_AIR ];then
 
 fi
 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
