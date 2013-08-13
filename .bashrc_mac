@@ -5,7 +5,11 @@
 PS1="[\W] $ "
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 
+#fix SSH 連線中文亂碼問題
+export LANG=zh_TW.UTF-8
 
+MACBOOK_AIR="Hsu-Wei-Chengteki-MacBook-Air.local"
+export WHO=`uname -a | awk '{print $2}'`
 
 # some more ls aliases
 if [ -f ~/.bash_aliases ]; then
@@ -32,7 +36,8 @@ alias vim='mvim -v '
 alias dpx='cd ~/Dropbox'
 #alias jp='cd ~/Dropbox/Python/'
 alias jp='cd /Users/hsu-wei-cheng/Dropbox/Python/URL_Command/sandbox'
-alias jr='cd ~/Dropbox/Ruby/'
+alias vvtk='cd /Users/hsu-wei-cheng/Dropbox/vivotek'
+alias jr='cd ~/Dropbox/Rails'
 alias 777='sudo chmod -R 777 *'
 
 #Rails
@@ -49,5 +54,11 @@ export PATH="~/bin:/usr/local/bin:/usr/bin:HOME/.rvm/bin:$PATH"
 PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig
 export PKG_CONFIG_PATH
 
-#Python Path
-export PYTHONPATH="/Users/hsu-wei-cheng/common_lib/python::$PYTHONPATH"
+#Run the code in Macbook air
+if [ $WHO == $MACBOOK_AIR ];then
+
+    #Python Path
+    export PYTHONPATH="/Users/hsu-wei-cheng/common_lib/python::$PYTHONPATH"
+
+fi
+
