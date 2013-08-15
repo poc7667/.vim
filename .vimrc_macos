@@ -72,6 +72,9 @@ set hlsearch
 autocmd BufNewFile,BufRead *.html.erb set filetype=erb.html.eruby
 filetype plugin on
 
+"auto import python template
+autocmd bufnewfile *.py 0r ~/common_lib/python/tmpl.py
+
 
 map gn :bn<cr>
 map gp :bp<cr>
@@ -90,6 +93,7 @@ set background=dark " we plan to use a dark background
 syntax on " syntax highlighting on
 
 set number " turn on line numbers
+set wildignore+=*/test/*,*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 
 set ruler "always show current position along the bottom
 
@@ -114,3 +118,31 @@ map <leader>r :RopeRename<CR>
  let g:pymode = 1
 " Load run code plugin
  let g:pymode_run = 1
+
+"add ctrlp.vim setting
+""
+let g:ctrlp_custom_ignore = 'tmp$\|\.git$\|\.hg$\|\.svn$\|.rvm$'
+let g:ctrlp_working_path_mode=0
+let g:ctrlp_match_window_bottom=1
+let g:ctrlp_max_height=15
+let g:ctrlp_match_window_reversed=0
+let g:ctrlp_mruf_max=500
+let g:ctrlp_follow_symlinks=1
+
+
+"Vundle
+ set rtp+=~/.vim/bundle/vundle/
+ call vundle#rc()
+ Bundle 'tpope/vim-surround'
+ Bundle 'ack.vim'
+ Bundle 'matchit.zip'
+ ""Vim-scripts repo
+ Bundle 'The-NERD-Commenter'
+ filetype plugin indent on
+
+ nmap <leader>a <Esc>:Ack ""
+
+ "folding code
+ nnoremap <space> za
+ vnoremap <space> zf
+ "
