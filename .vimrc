@@ -157,6 +157,9 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'tpope/vim-surround'
 Bundle 'ack.vim'
+Bundle 'matchit.zip'
+"Bundle 'sandeepravi/refactor-rails.vim'
+Bundle 'ecomba/vim-ruby-refactoring'
 "Vim-scripts repo
 Bundle 'The-NERD-Commenter'
 filetype plugin indent on

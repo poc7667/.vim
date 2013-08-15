@@ -79,6 +79,8 @@ map ff :CtrlP<cr>
 map gt :buffers<cr>
 "set NerdTreeSize
 let g:NERDTreeWinSize=12
+"auto close the nerdtress window whe you open new file
+let g:ctrlp_dont_split = 'nerdtree'
 
 
 set nocompatible " explictly get out of vi-compatible mode
