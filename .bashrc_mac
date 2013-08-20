@@ -44,7 +44,9 @@ alias dpx='cd $USER_HOME/Dropbox'
 #alias jp='cd ~/Dropbox/Python/'
 alias jp='cd $USER_HOME/Dropbox/Python/URL_Command/sandbox'
 alias vvtk='cd $USER_HOME/Dropbox/vivotek'
-alias jr='cd $USER_HOME//Dropbox/Rails/master/zeus'
+#alias jr='cd $USER_HOME//Dropbox/Rails/master/zeus'
+alias jr='cd /Users/hsu-wei-cheng/Dropbox/Rails/project'
+alias jc='cd /Users/hsu-wei-cheng/common_lib/rails'
 alias 777='sudo chmod -R 777 *'
 
 #Rails
