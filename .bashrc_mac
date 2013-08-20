@@ -42,10 +42,10 @@ alias vim='mvim -v '
 
 alias dpx='cd $USER_HOME/Dropbox'
 #alias jp='cd ~/Dropbox/Python/'
-alias jp='cd $USER_HOME/Dropbox/Python/URL_Command/sandbox'
+alias jp='cd /Users/hsu-wei-cheng/Dropbox/Python/url_cmd_web_version' 
 alias vvtk='cd $USER_HOME/Dropbox/vivotek'
 #alias jr='cd $USER_HOME//Dropbox/Rails/master/zeus'
-alias jr='cd /Users/hsu-wei-cheng/Dropbox/Rails/project'
+alias jr='cd /Users/hsu-wei-cheng/Dropbox/Rails/master/zeus' 
 alias jc='cd /Users/hsu-wei-cheng/common_lib/rails'
 alias 777='sudo chmod -R 777 *'
 

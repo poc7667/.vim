@@ -1,7 +1,7 @@
 hi  Comment  ctermfg=6
 "auto exec ruby and coffee script with F5 , remeber to save file before launching
-autocmd FileType ruby nmap <F5> :!ruby %<cr>
-autocmd FileType coffee nmap <F5> :!coffee %<cr>
+"autocmd FileType ruby nmap <F5> :!ruby %<cr>
+"autocmd FileType coffee nmap <F5> :!coffee %<cr>
 set encoding=utf-8 
 set fileencoding=utf-8 
 
@@ -134,10 +134,13 @@ let g:ctrlp_follow_symlinks=1
  set rtp+=~/.vim/bundle/vundle/
  call vundle#rc()
  Bundle 'tpope/vim-surround'
+ Bundle 'Raimondi/delimitMate'
  Bundle 'ack.vim'
  Bundle 'matchit.zip'
  ""Vim-scripts repo
  Bundle 'The-NERD-Commenter'
+ Bundle 'pep8'
+ ""Bundle 'AutoClose'
  filetype plugin indent on
 
  nmap <leader>a <Esc>:Ack ""
@@ -145,4 +148,6 @@ let g:ctrlp_follow_symlinks=1
  "folding code
  nnoremap <space> za
  vnoremap <space> zf
- "
+
+" pep8
+let g:pep8_map='<leader>8'
