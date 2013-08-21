@@ -42,11 +42,11 @@ alias vim='mvim -v '
 
 alias dpx='cd $USER_HOME/Dropbox'
 #alias jp='cd ~/Dropbox/Python/'
-alias jp='cd /Users/hsu-wei-cheng/Dropbox/Python/url_cmd_web_version' 
+alias jp='cd $USER_HOME/Dropbox/Python/url_cmd_web_version' 
 alias vvtk='cd $USER_HOME/Dropbox/vivotek'
 #alias jr='cd $USER_HOME//Dropbox/Rails/master/zeus'
-alias jr='cd /Users/hsu-wei-cheng/Dropbox/Rails/master/zeus' 
-alias jc='cd /Users/hsu-wei-cheng/common_lib/rails'
+alias jr='cd $USER_HOME/Dropbox/Rails/master/zeus' 
+alias jc='cd $USER_HOME/common_lib/rails'
 alias 777='sudo chmod -R 777 *'
 
 #Rails
@@ -56,7 +56,6 @@ alias uproutes='rake routes'
 export PYTHONPATH="$USER_HOME/common_lib/python::$PYTHONPATH"
 
 rvm_project_rvmrc=1
-
 
 #brew will put bin link in /usr/local/bin 
 export PATH="~/bin:/usr/local/bin:/usr/bin:HOME/.rvm/bin:$PATH"

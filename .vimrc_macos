@@ -1,7 +1,19 @@
 hi  Comment  ctermfg=6
+
+
 "auto exec ruby and coffee script with F5 , remeber to save file before launching
-"autocmd FileType ruby nmap <F5> :!ruby %<cr>
-"autocmd FileType coffee nmap <F5> :!coffee %<cr>
+autocmd FileType python nmap <F5> :!python %<cr>
+autocmd FileType ruby nmap <F5> :!ruby %<cr>
+"autocmd FileType coffee nmap <F5> :CoffeeCompile<cr>
+autocmd FileType coffee nmap <F5> :call SetCafeOptions()<cr>
+
+function SetCafeOptions()
+    CoffeeCompile
+    :set nonu
+    :res -24
+    :res +24
+endfunction
+
 set encoding=utf-8 
 set fileencoding=utf-8 
 
@@ -16,8 +28,6 @@ set autoread
 "auto move it last time the position you viewed
 "make vim save and load the folding of the document each time it loads"
 ""also places the cursor in the last place that it was left."
-au BufWinLeave * mkview
-au BufWinEnter * silent loadview
 
 "try to set show ansi color
 if &term=="ansi" 
@@ -122,7 +132,7 @@ map <leader>r :RopeRename<CR>
 "add ctrlp.vim setting
 ""
 let g:ctrlp_custom_ignore = 'tmp$\|\.git$\|\.hg$\|\.svn$\|.rvm$'
-let g:ctrlp_working_path_mode=0
+let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_match_window_bottom=1
 let g:ctrlp_max_height=15
 let g:ctrlp_match_window_reversed=0
@@ -135,6 +145,8 @@ let g:ctrlp_follow_symlinks=1
  call vundle#rc()
  Bundle 'tpope/vim-surround'
  Bundle 'Raimondi/delimitMate'
+"coffee script"
+ Bundle 'kchmck/vim-coffee-script'
  Bundle 'ack.vim'
  Bundle 'matchit.zip'
  ""Vim-scripts repo
@@ -151,3 +163,8 @@ let g:ctrlp_follow_symlinks=1
 
 " pep8
 let g:pep8_map='<leader>8'
+
+"coffee script"
+filetype plugin indent on
+call pathogen#infect()
+
