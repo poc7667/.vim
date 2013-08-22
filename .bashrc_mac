@@ -8,7 +8,7 @@ export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 #fix SSH 連線中文亂碼問題
 export LANG=zh_TW.UTF-8
 
-MACBOOK_AIR="Hsu-Wei-Chengteki-MacBook-Air.local"
+MACBOOK_AIR='Poc-MacBook-Air.local'
 MAC_PRO="localhost"
 export WHO=`uname -a | awk '{print $2}'`
 
