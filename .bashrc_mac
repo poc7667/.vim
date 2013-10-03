@@ -9,57 +9,80 @@ export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 export LANG=zh_TW.UTF-8
 
 MACBOOK_AIR='Poc-MacBook-Air.local'
+MACBOOK_AIR_LOCAL='poc-macbook-air'
 MAC_PRO="localhost"
 export WHO=`uname -a | awk '{print $2}'`
 
 if [ $WHO == $MACBOOK_AIR ];then
-    USER_HOME='/Users/hsu-wei-cheng'
+USER_HOME='/Users/hsu-wei-cheng'
+elif [ $WHO == $MACBOOK_AIR_LOCAL ];then
+USER_HOME='/Users/hsu-wei-cheng'
 elif    [ $WHO == $MAC_PRO ];then
-    USER_HOME='/Users/poc'
+USER_HOME='/Users/poc'
 fi
 
 # some more ls aliases
 if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+. ~/.bash_aliases
 fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-    . /etc/bash_completion
+. /etc/bash_completion
 fi
 # auto-completion when you type sudo 
 if [ "$PS1" ]; then
-    complete -cf sudo
+complete -cf sudo
 fi
 alias ls='ls -GF'
 alias ll='ls -aGFlt '
 alias f='find ./ -iname '
+alias pa='cd '
+
+function papa() {
+    cd `dirname $1`
+}
 
 #we should use mvim to replace original vim
 alias vim='mvim -v '
 
 alias dpx='cd $USER_HOME/Dropbox'
-#alias jp='cd ~/Dropbox/Python/'
-alias jp='cd $USER_HOME/Dropbox/Python/url_cmd_web_version' 
+alias jp='cd $USER_HOME/Dropbox/Python/sony_cgi_command'
+alias jblog='cd $USER_HOME/Dropbox/Rails/vvtk_octopress' 
 alias vvtk='cd $USER_HOME/Dropbox/vivotek'
-#alias jr='cd $USER_HOME//Dropbox/Rails/master/zeus'
-alias jr='cd $USER_HOME/Dropbox/Rails/master/zeus' 
+alias jr='cd $USER_HOME/Dropbox/Rails/project'
 alias jc='cd $USER_HOME/common_lib/rails'
+alias jbot='cd $USER_HOME/Dropbox/robot_framework'
 alias 777='sudo chmod -R 777 *'
+alias sx='cd /Volumes/TOSHIBA\ EXT/Movie\ 電影/_/__/_/__'
+alias tao2tw='cd $USER_HOME/Dropbox/Rails/itaoker/tao2tw'
+alias rv='cd app/views'
+alias rc='cd app/controllers'
+
+#ssh
+alias ascite_ssh='ssh poc@142.4.51.136'
+alias linode_ssh='ssh poc@106.186.30.219'
 
 #Rails
 alias dbmigrate='rake db:migrate'
 alias uproutes='rake routes'
 
-export PYTHONPATH="$USER_HOME/common_lib/python::$PYTHONPATH"
+#grep occupied port
+alias getport=' lsof -i -n -P | grep "4000\|3000"'
+
+export PYTHONPATH="$USER_HOME/common_lib/python:/usr/local/Cellar/opencv/2.4.5/:$PYTHONPATH"
 
 rvm_project_rvmrc=1
 
 #brew will put bin link in /usr/local/bin 
-export PATH="~/bin:/usr/local/bin:/usr/bin:HOME/.rvm/bin:$PATH"
+export PATH="~/bin:/usr/local/bin:HOME/.rvm/bin:/usr/bin:$PATH"
+
 PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig
 export PKG_CONFIG_PATH
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+#不知道位啥cmake root 爛掉
+export CMAKE_ROOT=/usr/local/share/cmake
