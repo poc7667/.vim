@@ -29,23 +29,6 @@ endif
 
 filetype on
 
-if has("cscope")
-set csprg=/usr/bin/cscope
-set csto=0
-set cst
-set nocsverb
-" add any database in current directory
-if filereadable("cscope.out")
-cs add cscope.out
-" else add database pointed to by environment
-elseif $CSCOPE_DB != ""
-cs add $CSCOPE_DB
-endif
-set csverb
-set cscopetag
-set cscopequickfix=s-,g-,c-,d-,t-,e-,f-,i-
-endif
-
 "let Tlist can close windows at one time
 let Tlist_Show_One_File=1
 let Tlist_Exit_OnlyWindow=1
@@ -121,17 +104,6 @@ let Tlist_Use_SingleClick=1
 set foldmethod=indent
 set foldlevel=99
 
-
-"Rope vim
-
-let $PYTHONPATH .= ":~/install/ropehg/rope:~/install/ropehg/ropemode:~/install/ropehg/ropevim"
-source ~/install/ropehg/ropevim/ropevim.vim
-let g:pymode_rope_goto_def_newwin = "new"
-let ropevim_vim_completion=1
-"Use Ctrl + ] . to autocomple
-inoremap <C-]> <C-R>=RopeCodeAssistInsertMode()<CR>
-map <leader>j :RopeGotoDefinition<CR>
-map <leader>r :RopeRename<CR>
 
 "auto ident with newline
 imap <C-Return> <CR><CR><C-o>k<Tab>
