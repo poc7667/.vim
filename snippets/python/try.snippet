@@ -1,7 +1,5 @@
 try:
-	${1}
-except ${2:Exception} as e:
-	exc_type, exc_obj, exc_tb = sys.exc_info()                  
-	fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
-	print("[Error]\n", exc_type, fname, exc_tb.tb_lineno)
-	sys.exit(e)
+    ${1:pass}
+except ${2:BaseException } as ${3:e}:
+    traceback.print_exc(file=sys.stdout)
+    ${4:raise $3}

@@ -1,5 +1,9 @@
 hi  Comment  ctermfg=6
 
+"make vim save and load the folding of the document each time it loads"
+""also places the cursor in the last place that it was left."
+au BufWinLeave *.* mkview
+au BufWinEnter *.* silent loadview
 
 
 "function SetCafeOptions()
@@ -54,6 +58,7 @@ endif
 "let Tlist can close windows at one time
 let Tlist_Show_One_File=1
 let Tlist_Exit_OnlyWindow=1
+let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 
 " Key map
 " Presee F4 and you can open the NERDTree
@@ -76,10 +81,10 @@ set hlsearch
 "set autocomplet 
 "autocmd BufNewFile,BufRead *.html.erb set filetype=html.eruby
 autocmd BufNewFile,BufRead *.html.erb set filetype=erb.html.eruby
-filetype plugin on
+filetype plugin indent on
 
 "auto import python template
-autocmd bufnewfile *.py 0r ~/common_lib/python/tmpl.py
+autocmd bufnewfile *.py 0r ~/common_lib/python_lib/tmpl.py
 
 
 map gn :bn<cr>
@@ -167,10 +172,6 @@ let g:pep8_map='<leader>8'
 call pathogen#infect()
 
 
-"make vim save and load the folding of the document each time it loads"
-""also places the cursor in the last place that it was left."
-au BufWinLeave *.* mkview
-au BufWinEnter *.* silent loadview
 
 let Tlist_Use_Right_Window   = 1
 
@@ -183,7 +184,13 @@ let Tlist_Use_Right_Window   = 1
 autocmd FileType python map <leader>p :!python %<cr>
 autocmd FileType ruby,rb map <leader>5 :w!<cr>:!ruby %<cr>
 autocmd FileType * map <leader>e :qa!<cr>
+
+"set extension .god as a Ruby file"
+au BufNewFile,BufRead *.god set filetype=ruby
+
 "autocmd FileType coffee nmap <F5> :CoffeeCompile<cr>
 "autocmd FileType coffee map <F5> :call SetCafeOptions()<cr>
 
 so ~/.vim/snippets/support_functions.vim
+
+

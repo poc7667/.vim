@@ -8,8 +8,10 @@ br = branch
 co = checkout
 di = diff
 lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+unadd = reset HEAD --
+
 [color]
 ui = true
 
 [core]
-	editor = "mvim -v "
+editor = "mvim -v "

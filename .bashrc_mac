@@ -8,7 +8,7 @@ export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 #fix SSH 連線中文亂碼問題
 export LANG=zh_TW.UTF-8
 
-MACBOOK_AIR='Poc-MacBook-Air.local'
+MACBOOK_AIR='Poc-MacBook-Air-2013.local'
 MACBOOK_AIR_LOCAL='poc-macbook-air'
 MAC_PRO="localhost"
 export WHO=`uname -a | awk '{print $2}'`
@@ -19,7 +19,14 @@ elif [ $WHO == $MACBOOK_AIR_LOCAL ];then
 USER_HOME='/Users/hsu-wei-cheng'
 elif    [ $WHO == $MAC_PRO ];then
 USER_HOME='/Users/poc'
+else
+USER_HOME='/Users/hsu-wei-cheng'
+
 fi
+
+
+# custom function
+f(){ find ./ -iname "*$1*" ;  }
 
 # some more ls aliases
 if [ -f ~/.bash_aliases ]; then
@@ -38,7 +45,7 @@ complete -cf sudo
 fi
 alias ls='ls -GF'
 alias ll='ls -aGFlt '
-alias f='find ./ -iname '
+#alias f='find ./ -iname '
 alias pa='cd '
 
 function papa() {
@@ -49,10 +56,11 @@ function papa() {
 alias vim='mvim -v '
 
 alias dpx='cd $USER_HOME/Dropbox'
-alias jp='cd $USER_HOME/Dropbox/Python/sony_cgi_command'
+alias jp='cd $USER_HOME/Dropbox/Python/vivotek/sony_cgi_command'
 alias jblog='cd $USER_HOME/Dropbox/Rails/vvtk_octopress' 
 alias vvtk='cd $USER_HOME/Dropbox/vivotek'
-alias jr='cd $USER_HOME/Dropbox/Rails/project'
+alias jr='cd $USER_HOME/Dropbox/Rails/zeus'
+alias jbk='cd $USER_HOME/Dropbox/Rails/project/book_store'
 alias jc='cd $USER_HOME/common_lib/rails'
 alias jbot='cd $USER_HOME/Dropbox/robot_framework'
 alias 777='sudo chmod -R 777 *'
@@ -60,6 +68,10 @@ alias sx='cd /Volumes/TOSHIBA\ EXT/Movie\ 電影/_/__/_/__'
 alias tao2tw='cd $USER_HOME/Dropbox/Rails/itaoker/tao2tw'
 alias rv='cd app/views'
 alias rc='cd app/controllers'
+alias af='cd $USER_HOME/Dropbox/Rails/vivotek/remote_focus_autotest_module/remote_focus_automation'
+alias zaf='cd $USER_HOME/Dropbox/Rails/zeus/lib/auto_tools/remote_focus'
+alias tealeaf='cd $USER_HOME/Dropbox/Rails/tealeaf/course2'
+alias worker='rake resque:work QUEUE='*''
 
 #ssh
 alias ascite_ssh='ssh poc@142.4.51.136'
@@ -68,6 +80,10 @@ alias linode_ssh='ssh poc@106.186.30.219'
 #Rails
 alias dbmigrate='rake db:migrate'
 alias uproutes='rake routes'
+alias reindex='rake sunspot:reindex[,,true]'
+alias spotstart='rake sunspot:solr:start '
+alias spotstop='rake sunspot:solr:stop '
+alias spotrestart='rake sunspot:solr:stop ; rake sunspot:solr:start '
 
 #grep occupied port
 alias getport=' lsof -i -n -P | grep "4000\|3000"'
@@ -77,7 +93,7 @@ export PYTHONPATH="$USER_HOME/common_lib/python:/usr/local/Cellar/opencv/2.4.5/:
 rvm_project_rvmrc=1
 
 #brew will put bin link in /usr/local/bin 
-export PATH="~/bin:/usr/local/bin:HOME/.rvm/bin:/usr/bin:$PATH"
+export PATH="~/bin:/usr/local/bin:HOME/.rvm/bin:/usr/bin:/usr/local/bin:$PATH"
 
 PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig
 export PKG_CONFIG_PATH
@@ -86,3 +102,5 @@ export PKG_CONFIG_PATH
 
 #不知道位啥cmake root 爛掉
 export CMAKE_ROOT=/usr/local/share/cmake
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
