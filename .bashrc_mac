@@ -2,7 +2,7 @@
 # It ends up looking like:
 # [unimind : ~] sc 3.2$
 # PS1="[\[33[0;37m\]\h : \W] \u \v$ "
-PS1="[\W] $ "
+# PS1="[\W] $ "
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 
 #fix SSH 連線中文亂碼問題
@@ -56,7 +56,11 @@ function papa() {
 alias vim='mvim -v '
 
 alias dpx='cd $USER_HOME/Dropbox'
-alias jp='cd $USER_HOME/Dropbox/Python/vivotek/sony_cgi_command'
+alias jp='cd $USER_HOME/Dropbox/Python/vivotek/vvtk_dqa_rtsp/vvtk_dqa_rtsp'
+alias jp='cd $USER_HOME/Dropbox/Python/vivotek/nd_multi_langs/src/nd_multi_langs'
+alias jp='cd $USER_HOME/Dropbox/Python/vivotek/tao2tw_repo/src/tao2tw_repo'
+alias jp='cd $USER_HOME/Dropbox/Python/vivotek/local_display_multi_langs/src/local_display_multi_langs'
+alias jp='cd $USER_HOME/Dropbox/Python/vivotek/middle_rtsp/src/middle_rtsp'
 alias jblog='cd $USER_HOME/Dropbox/Rails/vvtk_octopress' 
 alias vvtk='cd $USER_HOME/Dropbox/vivotek'
 alias jr='cd $USER_HOME/Dropbox/Rails/zeus'
@@ -66,6 +70,7 @@ alias jbot='cd $USER_HOME/Dropbox/robot_framework'
 alias 777='sudo chmod -R 777 *'
 alias sx='cd /Volumes/TOSHIBA\ EXT/Movie\ 電影/_/__/_/__'
 alias tao2tw='cd $USER_HOME/Dropbox/Rails/itaoker/tao2tw'
+alias tao2tw='cd $USER_HOME/Dropbox/Python/vivotek/tao2tw_repo/src/tao2tw_repo'
 alias rv='cd app/views'
 alias rc='cd app/controllers'
 alias af='cd $USER_HOME/Dropbox/Rails/vivotek/remote_focus_autotest_module/remote_focus_automation'
@@ -104,3 +109,67 @@ export PKG_CONFIG_PATH
 export CMAKE_ROOT=/usr/local/share/cmake
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+
+# Merge Tealeaf 
+
+[ -z "$PS1" ] || stty -ixon
+# [ -z "$PS1" ] || export PS1="\[\033[01;32m\]\[\033[00m\]\[\033[01;36m\]\w\[\033[00m\]\$(git_prompt_info '(%s)')$ "
+[ -z "$PS1" ] || export PS1="\[\033[01;36m\]\w\[\033[00m\]\$(git_prompt_info '(%s)')$ "
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+homebrew=/usr/local/bin:/usr/local/sbin
+export PATH=$homebrew:$PATH
+
+# git_prompt_info accepts 0 or 1 arguments (i.e., format string)
+# returns text to add to bash PS1 prompt (includes branch name)
+git_prompt_info () {
+  local g="$(git rev-parse --git-dir 2>/dev/null)"
+  if [ -n "$g" ]; then
+    local r
+    local b
+    local d
+    local s
+    # Rebasing
+    if [ -d "$g/rebase-apply" ] ; then
+      if test -f "$g/rebase-apply/rebasing" ; then
+        r="|REBASE"
+      fi
+      b="$(git symbolic-ref HEAD 2>/dev/null)"
+    # Interactive rebase
+    elif [ -f "$g/rebase-merge/interactive" ] ; then
+      r="|REBASE-i"
+      b="$(cat "$g/rebase-merge/head-name")"
+    # Merging
+    elif [ -f "$g/MERGE_HEAD" ] ; then
+      r="|MERGING"
+      b="$(git symbolic-ref HEAD 2>/dev/null)"
+    else
+      if [ -f "$g/BISECT_LOG" ] ; then
+        r="|BISECTING"
+      fi
+      if ! b="$(git symbolic-ref HEAD 2>/dev/null)" ; then
+        if ! b="$(git describe --exact-match HEAD 2>/dev/null)" ; then
+          b="$(cut -c1-7 "$g/HEAD")..."
+        fi
+      fi
+    fi
+
+    # Dirty Branch
+    local newfile='?? '
+    if [ -n "$ZSH_VERSION" ]; then
+      newfile='\?\? '
+    fi
+    d=''
+    s=$(git status --porcelain 2> /dev/null)
+    [[ $s =~ "$newfile" ]] && d+='+'
+    [[ $s =~ "M " ]] && d+='*'
+    [[ $s =~ "D " ]] && d+='-'
+
+    if [ -n "${1-}" ]; then
+      printf "$1" "${b##refs/heads/}$r$d"
+    else
+      printf "(%s) " "${b##refs/heads/}$r$d"
+    fi
+  fi
+}

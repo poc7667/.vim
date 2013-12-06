@@ -116,10 +116,10 @@ set smartcase " if there are caps, go case-sensitive
 
 
 "Rope vim
-let $PYTHONPATH .= ":~/install/ropehg/rope:~/install/ropehg/ropemode:~/install/ropehg/ropevim"
-source ~/install/ropehg/ropevim/ropevim.vim
-let g:pymode_rope_goto_def_newwin = "new"
-let ropevim_vim_completion=1
+"let $PYTHONPATH .= ":~/install/ropehg/rope:~/install/ropehg/ropemode:~/install/ropehg/ropevim"
+"source ~/install/ropehg/ropevim/ropevim.vim
+"let g:pymode_rope_goto_def_newwin = "new"
+"let ropevim_vim_completion=1
 "Use Ctrl + ] . to autocomple
 inoremap <C-]> <C-R>=RopeCodeAssistInsertMode()<CR>
 map <leader>j :RopeGotoDefinition<CR>
@@ -186,11 +186,11 @@ autocmd FileType ruby,rb map <leader>5 :w!<cr>:!ruby %<cr>
 autocmd FileType * map <leader>e :qa!<cr>
 
 "set extension .god as a Ruby file"
-au BufNewFile,BufRead *.god set filetype=ruby
+"au BufNewFile,BufRead *.god set filetype=ruby
 
 "autocmd FileType coffee nmap <F5> :CoffeeCompile<cr>
 "autocmd FileType coffee map <F5> :call SetCafeOptions()<cr>
 
-so ~/.vim/snippets/support_functions.vim
+"so ~/.vim/snippets/support_functions.vim
 
 
