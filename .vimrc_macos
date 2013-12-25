@@ -87,14 +87,12 @@ filetype plugin indent on
 autocmd bufnewfile *.py 0r ~/common_lib/python_lib/tmpl.py
 
 
-map gn :bn<cr>
-map gp :bp<cr>
 map ff :CtrlP<cr>
-map gt :buffers<cr>
 "set NerdTreeSize
 let g:NERDTreeWinSize=12
 "auto close the nerdtress window whe you open new file
 let g:ctrlp_dont_split = 'nerdtree'
+let g:ctrlp_custom_ignore = '\.bundle$\|bin$\|\.git$|vendor$\|tmp$\|public$\|log$\|'
 
 
 set nocompatible " explictly get out of vi-compatible mode
@@ -193,4 +191,4 @@ autocmd FileType * map <leader>e :qa!<cr>
 
 "so ~/.vim/snippets/support_functions.vim
 
-
+set re=1

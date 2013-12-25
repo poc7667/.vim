@@ -61,6 +61,8 @@ alias jp='cd $USER_HOME/Dropbox/Python/vivotek/nd_multi_langs/src/nd_multi_langs
 alias jp='cd $USER_HOME/Dropbox/Python/vivotek/tao2tw_repo/src/tao2tw_repo'
 alias jp='cd $USER_HOME/Dropbox/Python/vivotek/local_display_multi_langs/src/local_display_multi_langs'
 alias jp='cd $USER_HOME/Dropbox/Python/vivotek/middle_rtsp/src/middle_rtsp'
+alias jp='cd $USER_HOME/Dropbox/Python/vivotek/tdd_demo'
+alias js='cd $USER_HOME/Dropbox/Python/vivotek/streaming_verification/src/streaming_verification '
 alias jblog='cd $USER_HOME/Dropbox/Rails/vvtk_octopress' 
 alias vvtk='cd $USER_HOME/Dropbox/vivotek'
 alias jr='cd $USER_HOME/Dropbox/Rails/zeus'
@@ -77,10 +79,14 @@ alias af='cd $USER_HOME/Dropbox/Rails/vivotek/remote_focus_autotest_module/remot
 alias zaf='cd $USER_HOME/Dropbox/Rails/zeus/lib/auto_tools/remote_focus'
 alias tealeaf='cd $USER_HOME/Dropbox/Rails/tealeaf/course2'
 alias worker='rake resque:work QUEUE='*''
+alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
 
 #ssh
 alias ascite_ssh='ssh poc@142.4.51.136'
 alias linode_ssh='ssh poc@106.186.30.219'
+
+#python 3
+alias p3='/usr/local/bin/python3 '
 
 #Rails
 alias dbmigrate='rake db:migrate'
@@ -180,3 +186,11 @@ git_prompt_info () {
     fi
   fi
 }
+
+# for Pythokn virtual env 
+# pip should only run if there is a virtualenv currently activated
+export PIP_REQUIRE_VIRTUALENV=true
+# cache pip-installed packages to avoid re-downloading
+export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
+
+
