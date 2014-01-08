@@ -192,3 +192,5 @@ autocmd FileType * map <leader>e :qa!<cr>
 "so ~/.vim/snippets/support_functions.vim
 
 set re=1
+
+autocmd Filetype gitcommit setlocal spell textwidth=72
