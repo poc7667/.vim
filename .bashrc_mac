@@ -84,6 +84,7 @@ alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
 #ssh
 alias ascite_ssh='ssh poc@142.4.51.136'
 alias linode_ssh='ssh poc@106.186.30.219'
+alias dqa_ssh='ssh poc@172.19.16.101'
 
 #python 3
 alias p3='/usr/local/bin/python3 '
@@ -194,3 +195,6 @@ export PIP_REQUIRE_VIRTUALENV=true
 export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 
 
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
