@@ -10,7 +10,7 @@ export LANG=zh_TW.UTF-8
 
 MACBOOK_AIR='Poc-MacBook-Air-2013.local'
 MACBOOK_AIR_LOCAL='poc-macbook-air'
-MAC_PRO="localhost"
+MAC_PRO="Macintosh.local"
 export WHO=`uname -a | awk '{print $2}'`
 
 if [ $WHO == $MACBOOK_AIR ];then
