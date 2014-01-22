@@ -90,10 +90,9 @@ autocmd bufnewfile *.py 0r ~/common_lib/python_lib/tmpl.py
 map ff :CtrlP<cr>
 "set NerdTreeSize
 let g:NERDTreeWinSize=12
+let g:NERDTreeIgnore=['\.vim$', '\~$', '\vendor$']
 "auto close the nerdtress window whe you open new file
-let g:ctrlp_dont_split = 'nerdtree'
-let g:ctrlp_custom_ignore = '\.bundle$\|bin$\|\.git$|vendor$\|tmp$\|public$\|log$\|'
-
+"let g:ctrlp_dont_split = 'nerdtree'
 
 set nocompatible " explictly get out of vi-compatible mode
 
@@ -102,7 +101,6 @@ set background=dark " we plan to use a dark background
 syntax on " syntax highlighting on
 
 set number " turn on line numbers
-set wildignore+=*/test/*,*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 
 set ruler "always show current position along the bottom
 
@@ -130,10 +128,11 @@ map <leader>r :RopeRename<CR>
 
 "add ctrlp.vim setting
 ""
-let g:ctrlp_custom_ignore = 'tmp$\|\.git$\|\.hg$\|\.svn$\|.rvm$'
-let g:ctrlp_working_path_mode = 'ra'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*,*/\.git/*
+let g:ctrlp_custom_ignore = 'tmp$\|\.git$\|\.hg$\|\.svn$\|.rvm$|.bundle$\|vendor'
+let g:ctrlp_working_path_mode = 0
 let g:ctrlp_match_window_bottom=1
-let g:ctrlp_max_height=15
+let g:ctrlp_max_height=25
 let g:ctrlp_match_window_reversed=0
 let g:ctrlp_mruf_max=500
 let g:ctrlp_follow_symlinks=1
@@ -149,10 +148,11 @@ let g:ctrlp_follow_symlinks=1
  Bundle 'kchmck/vim-coffee-script'
  Bundle 'ack.vim'
  Bundle 'matchit.zip'
+ Bundle 'kien/ctrlp.vim'
  "Markdown"
  "Bundle 'plasticboy/vim-markdown'
  ""Vim-scripts repo
- Bundle 'The-NERD-Commenter'
+ "Bundle 'The-NERD-Commenter'
  Bundle 'pep8'
  ""Bundle 'AutoClose'
  filetype plugin indent on
@@ -194,3 +194,9 @@ autocmd FileType * map <leader>e :qa!<cr>
 set re=1
 
 autocmd Filetype gitcommit setlocal spell textwidth=72
+
+
+ " enable per-project .vimrc files
+   set exrc
+ "   " Only execute safe per-project vimrc commands
+     set secure"
