@@ -27,6 +27,7 @@ fi
 
 # custom function
 f(){ find ./ -iname "*$1*" ;  }
+cn(){ echo -e "\033];$1\007" ; }
 
 # some more ls aliases
 if [ -f ~/.bash_aliases ]; then
@@ -56,16 +57,12 @@ function papa() {
 alias vim='mvim -v '
 
 alias dpx='cd $USER_HOME/Dropbox'
-alias jp='cd $USER_HOME/Dropbox/Python/vivotek/vvtk_dqa_rtsp/vvtk_dqa_rtsp'
-alias jp='cd $USER_HOME/Dropbox/Python/vivotek/nd_multi_langs/src/nd_multi_langs'
-alias jp='cd $USER_HOME/Dropbox/Python/vivotek/tao2tw_repo/src/tao2tw_repo'
-alias jp='cd $USER_HOME/Dropbox/Python/vivotek/local_display_multi_langs/src/local_display_multi_langs'
-alias jp='cd $USER_HOME/Dropbox/Python/vivotek/middle_rtsp/src/middle_rtsp'
-alias jp='cd $USER_HOME/Dropbox/Python/vivotek/tdd_demo'
+alias jp='cd $USER_HOME/Dropbox/Python/vivotek/'
 alias js='cd $USER_HOME/Dropbox/Python/vivotek/streaming_verification/src/streaming_verification '
 alias jblog='cd $USER_HOME/Dropbox/Rails/vvtk_octopress' 
 alias vvtk='cd $USER_HOME/Dropbox/vivotek'
-alias jr='cd $USER_HOME/Dropbox/Rails/zeus'
+alias jz='cd $USER_HOME/Dropbox/Rails/zeus'
+alias jr='cd $USER_HOME/Dropbox/Ruby'
 alias jbk='cd $USER_HOME/Dropbox/Rails/project/book_store'
 alias jc='cd $USER_HOME/common_lib/rails'
 alias jbot='cd $USER_HOME/Dropbox/robot_framework'
@@ -105,7 +102,7 @@ export PYTHONPATH="$USER_HOME/common_lib/python:/usr/local/Cellar/opencv/2.4.5/:
 rvm_project_rvmrc=1
 
 #brew will put bin link in /usr/local/bin 
-export PATH="~/bin:/usr/local/bin:HOME/.rvm/bin:/usr/bin:/usr/local/bin:$PATH"
+export PATH="~/bin:/usr/local/bin:~/.rvm/bin:/usr/bin:/usr/local/bin:$PATH"
 
 PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig
 export PKG_CONFIG_PATH
