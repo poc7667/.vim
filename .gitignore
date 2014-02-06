@@ -1,3 +1,11 @@
 .netrwhist*
 .netrwhist
 /view
+
+/bundle/ack.vim
+/bundle/delimitMate
+/bundle/matchit.zip
+/bundle/pep8
+/bundle/vim-coffee-script
+/bundle/vim-surround
+/bundle/vundle
