@@ -1,0 +1,51 @@
+alias ll='ll -lah'
+
+#we should use mvim to replace original vim
+alias vim='mvim -v '
+
+alias dpx='cd $USER_HOME/Dropbox'
+alias jp='cd $USER_HOME/Dropbox/Python/vivotek/'
+
+alias jc='cd $USER_HOME/Dropbox/Python/vivotek/long_term_streaming_info_capture/src/long_term_streaming_info_capture/scripts'
+alias pixnet='cd $USER_HOME/pixnet_hackathon/location_parser/src/location_parser'
+alias pixnet_web='cd $USER_HOME/pixnet_hackathon/website'
+alias jm='cd $USER_HOME/Dropbox/Python/vivotek/long_term_video_audio_monitor/src/long_term_video_audio_monitor'
+alias jblog='cd $USER_HOME/Dropbox/Rails/vvtk_octopress' 
+alias vvtk='cd $USER_HOME/Dropbox/vivotek'
+alias jz='cd $USER_HOME/Dropbox/Rails/zeus'
+alias js='cd $USER_HOME/Dropbox/Rails/dqa_server'
+alias omni='cd /Users/hsu-wei-cheng/Dropbox/Rails/sandbox/omni_test'
+alias jr='cd $USER_HOME/Dropbox/Ruby'
+alias jbk='cd $USER_HOME/Dropbox/Rails/project/book_store'
+alias jbot='cd $USER_HOME/Dropbox/robot_framework'
+alias 777='sudo chmod -R 777 *'
+alias sx='cd /Volumes/TOSHIBA\ EXT/Movie\ 電影/_/__/_/__'
+alias tao2tw='cd $USER_HOME/Dropbox/Rails/itaoker/tao2tw'
+alias tao2tw='cd $USER_HOME/Dropbox/Python/vivotek/tao2tw_repo/src/tao2tw_repo'
+alias rv='cd app/views'
+alias rc='cd app/controllers'
+alias af='cd $USER_HOME/Dropbox/Rails/vivotek/remote_focus_autotest_module/remote_focus_automation'
+alias zaf='cd $USER_HOME/Dropbox/Rails/zeus/lib/auto_tools/remote_focus'
+alias tealeaf='cd $USER_HOME/Dropbox/Rails/tealeaf/myflix'
+alias worker='rake resque:work QUEUE='*''
+alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
+alias invoice='cd /Users/hsu-wei-cheng/Dropbox/tao2tw_itaoker_project/Invoice_發票開立/invoice_parse'
+
+#ssh
+alias ascite_ssh='ssh poc@142.4.51.136'
+alias linode_ssh='ssh poc@106.186.30.219'
+alias dqa_ssh='ssh poc@172.19.16.101'
+alias 03_dqa_ssh='ssh poc@172.19.16.103'
+alias 02_dqa_ssh='ssh poc@172.19.11.232'
+
+#python 3
+alias p3='/usr/local/bin/python3 '
+
+#Rails
+alias dbmigrate='rake db:migrate'
+alias uproutes='rake routes'
+alias reindex='rake sunspot:reindex[,,true]'
+alias spotstart='rake sunspot:solr:start '
+alias spotstop='rake sunspot:solr:stop '
+alias spotrestart='rake sunspot:solr:stop ; rake sunspot:solr:start '
+
