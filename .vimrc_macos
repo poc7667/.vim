@@ -2,8 +2,10 @@ hi  Comment  ctermfg=6
 
 "make vim save and load the folding of the document each time it loads"
 ""also places the cursor in the last place that it was left."
-au BufWinLeave *.* mkview
-au BufWinEnter *.* silent loadview
+
+"Comment this out can avoid 'path not found in Rails vim'"
+"au BufWinLeave *.* mkview
+"au BufWinEnter *.* silent loadview
 
 
 "function SetCafeOptions()
@@ -148,6 +150,7 @@ let g:ctrlp_follow_symlinks=1
  Bundle 'kchmck/vim-coffee-script'
  Bundle 'ack.vim'
  Bundle 'matchit.zip'
+ Bundle 'tpope/vim-rails'
  Bundle 'kien/ctrlp.vim'
  "Markdown"
  "Bundle 'plasticboy/vim-markdown'
