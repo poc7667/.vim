@@ -154,8 +154,8 @@ map <leader>r :RopeRename<CR>
 
 "add ctrlp.vim setting
 ""
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*,*/\.git/*
-let g:ctrlp_custom_ignore = 'tmp$\|\.git$\|\.hg$\|\.svn$\|.rvm$|.bundle$\|vendor'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/\.git/*
+let g:ctrlp_custom_ignore = 'tmp$\|\.git$\|\.hg$\|\.svn$\|.rvm$|.bundle$'
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_match_window_bottom=1
 let g:ctrlp_max_height=25
