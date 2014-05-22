@@ -1,7 +1,20 @@
-alias ll='ll -lah'
+alias ll='ls -lah'
+
+
+#resize pic
+alias resize_jpg='sips --resampleWidth '
 
 #we should use mvim to replace original vim
 alias vim='mvim -v '
+alias hist='history '
+# git flow
+alias gfeat='git flow feature '
+alias ghot='git flow hotfix  '
+alias ga='git add '
+alias gc='git co '
+alias grls='git flow release '
+alias gpush='git push origin master'
+alias gpull='git pull origin master'
 
 alias dpx='cd $USER_HOME/Dropbox'
 alias jp='cd $USER_HOME/Dropbox/Python/vivotek/'
@@ -13,7 +26,7 @@ alias jm='cd $USER_HOME/Dropbox/Python/vivotek/long_term_video_audio_monitor/src
 alias jblog='cd $USER_HOME/Dropbox/Rails/vvtk_octopress' 
 alias vvtk='cd $USER_HOME/Dropbox/vivotek'
 alias jz='cd $USER_HOME/Dropbox/Rails/zeus'
-alias js='cd $USER_HOME/Dropbox/Rails/dqa_server'
+alias jd='cd $USER_HOME/Dropbox/Rails/dqa_dev_server'
 alias omni='cd /Users/hsu-wei-cheng/Dropbox/Rails/sandbox/omni_test'
 alias jr='cd $USER_HOME/Dropbox/Ruby'
 alias jbk='cd $USER_HOME/Dropbox/Rails/project/book_store'
@@ -27,13 +40,13 @@ alias rc='cd app/controllers'
 alias af='cd $USER_HOME/Dropbox/Rails/vivotek/remote_focus_autotest_module/remote_focus_automation'
 alias zaf='cd $USER_HOME/Dropbox/Rails/zeus/lib/auto_tools/remote_focus'
 alias tealeaf='cd $USER_HOME/Dropbox/Rails/tealeaf/myflix'
-alias worker='rake resque:work QUEUE='*''
 alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
 alias invoice='cd /Users/hsu-wei-cheng/Dropbox/tao2tw_itaoker_project/Invoice_發票開立/invoice_parse'
 
 #ssh
 alias ascite_ssh='ssh poc@142.4.51.136'
 alias linode_ssh='ssh poc@106.186.30.219'
+alias 4am_ssh='ssh poc@106.186.30.62'
 alias dqa_ssh='ssh poc@172.19.16.101'
 alias 03_dqa_ssh='ssh poc@172.19.16.103'
 alias 02_dqa_ssh='ssh poc@172.19.11.232'
