@@ -184,6 +184,8 @@ let g:ctrlp_follow_symlinks=1
  "Bundle 'The-NERD-Commenter'
  Bundle 'pep8'
  ""Bundle 'AutoClose'
+ "https://github.com/vim-ruby/vim-ruby/wiki/VimRubySupport"
+ Bundle 'vim-ruby/vim-ruby'
  filetype plugin indent on
 
  nmap <leader>a <Esc>:Ack ""
@@ -229,3 +231,8 @@ autocmd Filetype gitcommit setlocal spell textwidth=72
    set exrc
  "   " Only execute safe per-project vimrc commands
      set secure"
+"For Ruby autocomplete"
+
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
