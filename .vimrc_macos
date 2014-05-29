@@ -111,6 +111,7 @@ filetype plugin indent on
 
 "auto import python template
 autocmd bufnewfile *.py 0r ~/common_lib/python_lib/tmpl.py
+autocmd bufnewfile *.rb 0r ~/common_lib/new_ruby_tmpl.rb
 
 
 map ff :CtrlP<cr>
