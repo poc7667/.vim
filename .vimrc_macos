@@ -189,6 +189,8 @@ let g:ctrlp_follow_symlinks=1
  ""Bundle 'AutoClose'
  "https://github.com/vim-ruby/vim-ruby/wiki/VimRubySupport"
  Bundle 'vim-ruby/vim-ruby'
+ " Repovim 
+ Bundle 'klen/python-mode'
  filetype plugin indent on
 
  nmap <leader>a <Esc>:Ack ""
@@ -246,3 +248,11 @@ autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 
 source ~/.vim/snippets/support_functions.vim
+
+
+"For rope vim"
+"filetype off
+"call pathogen#infect()
+"call pathogen#helptags()
+"filetype plugin indent on
+"syntax on
