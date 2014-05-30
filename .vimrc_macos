@@ -101,6 +101,9 @@ nnoremap <F12> :TlistToggle<CR>
 map <c-d> <c-w>l
 map <c-a> <c-w>h
 
+"map ruby version"
+:map <c-r> :w\|:!'/Users/hsu-wei-cheng/.rbenv/shims/ruby' %<cr>
+
 "set highlight
 set hlsearch
 
