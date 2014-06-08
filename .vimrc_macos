@@ -256,3 +256,5 @@ source ~/.vim/snippets/support_functions.vim
 "call pathogen#helptags()
 "filetype plugin indent on
 "syntax on
+
+set fileformat=unix
