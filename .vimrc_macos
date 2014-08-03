@@ -171,26 +171,26 @@ let g:ctrlp_follow_symlinks=0
 "Vundle
  set rtp+=~/.vim/bundle/vundle/
  call vundle#rc()
- Bundle 'gmarik/vundle'
- Bundle 'tpope/vim-surround'
- Bundle 'Raimondi/delimitMate'
+ Plugin 'gmarik/vundle'
+ Plugin 'tpope/vim-surround'
+ Plugin 'Raimondi/delimitMate'
 "coffee script"
- Bundle 'kchmck/vim-coffee-script'
- Bundle 'ack.vim'
- Bundle 'matchit.zip'
- Bundle 'scrooloose/nerdcommenter'
- Bundle 'tpope/vim-rails'
- Bundle 'kien/ctrlp.vim'
+ Plugin 'kchmck/vim-coffee-script'
+ Plugin 'ack.vim'
+ Plugin 'matchit.zip'
+ Plugin 'scrooloose/nerdcommenter'
+ Plugin 'tpope/vim-rails'
+ Plugin 'kien/ctrlp.vim'
  "Markdown"
- "Bundle 'plasticboy/vim-markdown'
+ "Plugin 'plasticboy/vim-markdown'
  ""Vim-scripts repo
- "Bundle 'The-NERD-Commenter'
- Bundle 'pep8'
- ""Bundle 'AutoClose'
+ "Plugin 'The-NERD-Commenter'
+ Plugin 'pep8'
+ ""Plugin 'AutoClose'
  "https://github.com/vim-ruby/vim-ruby/wiki/VimRubySupport"
- Bundle 'vim-ruby/vim-ruby'
+ Plugin 'vim-ruby/vim-ruby'
  " Repovim 
- Bundle 'klen/python-mode'
+ Plugin 'klen/python-mode'
  filetype plugin indent on
 
  nmap <leader>a <Esc>:Ack ""
