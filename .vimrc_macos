@@ -88,10 +88,10 @@ let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 
 " Key map
 " Presee F4 and you can open the NERDTree
-nnoremap <silent> <F4> :NERDTree<CR>  
+"nnoremap <silent> <F4> :NERDTree<CR>  
 "nnoremap <silent> <F3> :!/usr/bin/env python %<CR>
 " Show function List with Tlist 
-nnoremap <F12> :TlistToggle<CR>
+"nnoremap <F12> :TlistToggle<CR>
 
 " Map ctrl+q to ctrlw+ctrlw
 "
